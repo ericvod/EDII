@@ -12,8 +12,10 @@ import SortingClasses.SelectionSort;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
+		//Instanciar Algoritmo de ordenaÃ§Ã£o
 		InsertionSort sort = new InsertionSort();
-		File arquivo = new File("Files/novoArquivo.txt");
+		//inserir o arquivo que contem os dados aqui
+		File arquivo = new File("Files/dados5.txt");
 		FileReader fr = new FileReader(arquivo);
 		BufferedReader br = new BufferedReader(fr);
 		
@@ -31,9 +33,10 @@ public class Main {
 			intVetor[i] = Integer.parseInt(strVetor[i].trim());
 		}
 		
+		//Usar o algoritmo de ordenaÃ§Ã£o aqui
 		sort.insertionSort(intVetor);
 		
-		File novoArquivo = new File("Files/novoArquivo2.txt");
+		File novoArquivo = new File("Files/novoArquivo.txt");
 		novoArquivo.delete();
 		novoArquivo.createNewFile();
 		FileWriter fw = new FileWriter(novoArquivo);
@@ -42,11 +45,11 @@ public class Main {
 		bw.newLine();
 		bw.write("Nome do algoritmo: " + sort.nome);
 		bw.newLine();
-		bw.write("Tempo de Execução: " + sort.tempoExecucao);
+		bw.write("Tempo de ExecuÃ§Ã£o: " + sort.tempoExecucao);
 		bw.newLine();
-		bw.write("Quantidade de comparações: " + sort.nComparacao);
+		bw.write("Quantidade de comparaÃ§Ãµes: " + sort.nComparacao);
 		bw.newLine();
-		bw.write("Quantidade de Movimentações: " + sort.nMovimentos);
+		bw.write("Quantidade de MovimentaÃ§Ãµes: " + sort.nMovimentos);
 		bw.newLine();
 		bw.write(Arrays.toString(intVetor));
 		bw.close();
