@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		ArvoreAvl avl = new ArvoreAvl();
 		Arvore arvoreBinaria = new Arvore();
-		File arquivo = new File("Files/dados100_mil.txt");
+		File arquivo = new File("Files/dados5.txt");
 		FileReader fr = new FileReader(arquivo);
 		BufferedReader br = new BufferedReader(fr);
 		
@@ -33,15 +33,15 @@ public class Main {
 		
 		long tempoInicial = System.currentTimeMillis();
 		for (int i = 0; i < intVetor.length; i++) {
-			arvoreBinaria.inserir(intVetor[i]);
+			avl.inserir(intVetor[i]);
 		}
 		
 		System.out.println("Em ordem:");
-		arvoreBinaria.emOrdem(arvoreBinaria.raiz);
+		avl.emOrdem(avl.raiz);
 		System.out.println("\nPre ordem:");
-		arvoreBinaria.preOrdem(arvoreBinaria.raiz);
+		avl.preOrdem(avl.raiz);
 		System.out.println("\nPos ordem:");
-		arvoreBinaria.posOrdem(arvoreBinaria.raiz);
+		avl.posOrdem(avl.raiz);
 		
 		long tempoFinal = System.currentTimeMillis();
         long tempoTotal = tempoFinal - tempoInicial;
